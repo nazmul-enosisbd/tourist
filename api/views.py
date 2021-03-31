@@ -10,6 +10,10 @@ from api.serializers import PlaceSerializer, TypeSerializer
 
 import sqlalchemy
 
+# engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
+# Session = sqlalchemy.orm.sessionmaker(bind=engine)
+# session = Session()
+
 
 @csrf_exempt
 def snippet_list(request):
@@ -49,6 +53,9 @@ class PlaceList(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
+        engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
+        Session = sqlalchemy.orm.sessionmaker(bind=engine)
+        session = Session()
         serializer = PlaceSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -64,11 +71,29 @@ class PlaceListGeneric(generics.ListCreateAPIView):
     # queryset = Snippet.objects.all()
     serializer_class = PlaceSerializer
 
+    # def get(self, request, *args, **kwargs):
+    #     # engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
+    #     # Session = sqlalchemy.orm.sessionmaker(bind=engine)
+    #     # session = Session()
+    #     # self.queryset = session.query(Place).all()
+    #     # session.close()
+    #     return self.list(request, *args, **kwargs)
+
+    # def post(self, request, *args, **kwargs):
+    #     return self.create(request, *args, **kwargs)
+
 
 class TypeListGeneric(generics.ListCreateAPIView):
-    engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
-    Session = sqlalchemy.orm.sessionmaker(bind=engine)
-    session = Session()
-    queryset = session.query(Type).all()
+    # engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
+    # Session = sqlalchemy.orm.sessionmaker(bind=engine)
+    # session = Session()
+    # queryset = session.query(Type).all()
     # queryset = Snippet.objects.all()
     serializer_class = TypeSerializer
+
+    def get(self, request, *args, **kwargs):
+        engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
+        Session = sqlalchemy.orm.sessionmaker(bind=engine)
+        session = Session()
+        self.queryset = session.query(Type).all()
+        return self.list(request, *args, **kwargs)

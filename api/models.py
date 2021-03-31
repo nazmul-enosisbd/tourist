@@ -22,7 +22,7 @@ class Place(Base):
     name = Column(String(50))
     address = Column(String(100))
     rating = Column(Integer)
-    type_id = Column(String(10), ForeignKey('types.id'))
+    type_id = Column(Integer, ForeignKey('types.id'))
     picture = Column(String())
 
     def __repr__(self):
