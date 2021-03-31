@@ -33,6 +33,7 @@ class PlaceSerializer(serializers.Serializer):
         instance = Place(**validate_data)
         session.add(instance)
         session.commit()
+        session.expunge_all()
         # session.close()
         return instance
 
