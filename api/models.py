@@ -27,3 +27,10 @@ class Place(Base):
 
     def __repr__(self):
         return "<Place(name='%s')>" % self.name
+        # return "{\
+        #     id: %s\
+        #     name: %s\
+        #     address: %s\
+        #     rating: %s\
+        #     type_id: %s\
+        #     picture: %s }" % (self.id, self.name, self.address, self.rating, self.type_id, self.picture)

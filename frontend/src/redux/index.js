@@ -1,0 +1,1 @@
+export {addPlace, deletePlace, populateList, updatePlace} from './touristPlace/touristPlaceAction'

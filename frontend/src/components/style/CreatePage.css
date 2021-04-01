@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px grey white;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: #efefef;
+    border-color: white;
+  }
+
+  .custom-inut{
+    width: 50%;
+    padding: 10px;
+    border: 1px grey white;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: #efefef;
+    border-color: white;
+  }
+  
+  input[type="number"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px whitesmoke #9b9b9b;
+    border-radius: 10px;
+    resize: vertical;
+    border-color: white;
+    background-color: #efefef;
+  }
+  
+  input[type="file"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px whitesmoke #9b9b9b;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: #efefef;
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-top: none;
+    border-left: none;
+    border-color: black;
+  }
+  
+  input[type="reset"] {
+    background-color: #b3a209;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin-right: 175px;
+    margin-top: 20px;
+    border-top: none;
+    border-left: none;
+    border-color: black;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+.centered-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+    height: 500px;
+}
+
+.custom-btn-submit {
+    background-color: #5CB85C;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-top: none;
+    border-left: none;
+    border-color: black;
+}
+.custom-btn-submit:hover {
+  background-color: #5C885C;
+}
+
+.custom-btn-reset {
+    background-color: #F0AD4E;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin-top: 20px;
+    border-top: none;
+    border-left: none;
+    border-color: black;
+}
+.custom-btn-reset:hover{
+  background-color: #b3a209;
+}
+  
+  .container {
+    border-radius: 5px;
+    background-color: white;
+    padding-left: 350px;
+    padding-right: 350px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 20%;
+    margin-top: 20px;
+    padding-left: 50px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 20px;
+  }
+  
+  .col-90 {
+    float: left;
+    width: 15%;
+    margin-top: 15px;
+    padding-left: 10px;
+    color: red;
+    font-size: small;
+    font-weight: bolder;
+  }
+  
+  .type-label {
+    float: left;
+    width: 15%;
+    margin-top: 5px;
+    padding-left: 10px;
+    font-size: medium;
+    font-weight: bold;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    input[type="submit"] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  
+  .back-link {
+    text-align: center;
+    padding-top: 60px;
+    float: right;
+  }
+  
+  .back-link a {
+    color: #13b7f4;
+  }
+  

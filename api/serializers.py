@@ -2,6 +2,8 @@ from rest_framework import serializers
 from api.models import Type, Place
 import sqlalchemy
 
+from api.session import sa_session
+
 
 engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
 Session = sqlalchemy.orm.sessionmaker(bind=engine)
@@ -18,7 +20,7 @@ class PlaceSerializer(serializers.Serializer):
     rating = serializers.IntegerField()
     # types = TypeSerializer(many=True, read_only=True)
     type_id = serializers.ChoiceField(
-        choices=[i.id for i in session.query(Type.id.label('id')).all()])
+        choices=[i.id for i in sa_session.query(Type.id.label('id')).all()])
     picture = serializers.CharField(
         required=False, allow_blank=True)
 
@@ -28,12 +30,13 @@ class PlaceSerializer(serializers.Serializer):
         """
         # return Place.objects.create(**validated_data)
         engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
-        Session = sqlalchemy.orm.sessionmaker(bind=engine)
+        Session = sqlalchemy.orm.sessionmaker(
+            bind=engine, expire_on_commit=False)
         session = Session()
         instance = Place(**validate_data)
         session.add(instance)
         session.commit()
-        session.expunge_all()
+        # sa_session.expunge_all()
         # session.close()
         return instance
 
@@ -46,7 +49,12 @@ class PlaceSerializer(serializers.Serializer):
         instance.rating = validate_data.get('rating', instance.rating)
         instance.type_id = validate_data.get('type_id', instance.type_id)
         instance.picture = validate_data.get('picture', instance.picture)
-        instance.save()
+        engine = sqlalchemy.create_engine('sqlite:///db.sqlite3')
+        Session = sqlalchemy.orm.sessionmaker(
+            bind=engine, expire_on_commit=False)
+        session = Session()
+        session.add(instance)
+        session.commit()
         return instance
 
 

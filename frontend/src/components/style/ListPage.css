@@ -1,0 +1,127 @@
+.test {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#search-box {
+    margin-top: 10px;
+    width: 40%;
+}
+
+.custom-inut{
+    width: 50%;
+    padding: 10px;
+    border: 1px grey white;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: #efefef;
+    border-color: white;
+  }
+
+.main {
+    height: 500px;
+    max-height: 500px;
+    width: 100%;
+    border: 2px solid black;
+    table-layout: fixed;
+    overflow-y: scroll;
+}
+
+
+thead.header {
+    background-color: black;
+    color: white;
+    height: 50px;
+    width: 100%;
+}
+
+.content td.picture img{
+    height: 200px;
+    width: 200px;
+}
+
+tr.content {
+    height: 250px;
+    background-color: #EFEFEF;
+    text-align: center;
+}
+
+tr.content:nth-of-type(even) {
+    background-color: white;
+}
+
+.content td {
+    width: 250px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.custom-btn {
+    background-color: #428BCA;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border-top: none;
+    border-left: none;
+    border-color: black;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.custom-btn:hover {
+    background-color: #428BFF;
+    padding: 14px 22px;
+}
+
+.custom-btn-update {
+    background-color: #428BCA;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border-top: none;
+    border-left: none;
+    border-color: black;
+    margin-right: 10px;
+}
+.custom-btn-update:hover {
+    background-color: #428BFF;
+    padding: 14px 22px;
+}
+
+.custom-btn-delete {
+    background-color: #D9534F;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border-top: none;
+    border-left: none;
+    border-color: black;
+}
+.custom-btn-delete:hover {
+    background-color: #FF534F;
+    padding: 14px 22px;
+}
+
+.up-arrow {
+    width: 0;
+    height: 0;
+    border: solid 5px transparent;
+    background: transparent;
+    border-bottom: solid 7px white;
+    border-top-width: 0;
+    cursor: pointer;
+    float: right;
+}
+
+.down-arrow {
+    width: 0;
+    height: 0;
+    border: solid 5px transparent;
+    background: transparent;
+    border-top: solid 7px white;
+    border-bottom-width: 0;
+    cursor: pointer;
+    float: right;
+}
